@@ -1,4 +1,4 @@
-namespace StreetOutlawsMVC.Models;
+namespace StreetOutlaws.MVC.Models;
 
 public class ErrorViewModel
 {

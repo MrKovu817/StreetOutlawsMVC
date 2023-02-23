@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\StreetOutlaws.Data\StreetOutlaws.Data.csproj" />
+    <ProjectReference Include="..\StreetOutlaws.Models\StreetOutlaws.Models.csproj" />
+    <ProjectReference Include="..\StreetOutlaws.Services\StreetOutlaws.Services.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+</Project>
