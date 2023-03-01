@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StreetOutlaws.Data.Entities
+namespace StreetOutlaws.Models.CarModel
 {
-    public class Car
+    public class CarUpdate
     {
         [Required]
         public int Id { get; set; }
@@ -17,9 +16,5 @@ namespace StreetOutlaws.Data.Entities
         public string Model { get; set; }
         [Required]
         public int Year { get; set; }
-        [Required]
-        [ForeignKey(nameof(DriverId))]
-        public int DriverId { get; set; }
-        public virtual Driver Driver { get; set; }
     }
 }

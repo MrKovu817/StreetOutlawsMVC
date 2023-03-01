@@ -5,18 +5,14 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StreetOutlaws.Data.Entities
+
+namespace StreetOutlaws.Models.TrackModels
 {
-    public class Driver
+    public class TrackListItem
     {
         [Required]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
-        [ForeignKey(nameof(TeamId))]
-        public int TeamId { get; set; } 
-        public virtual Team Team { get; set; }
-        public List<Car> Cars { get; set; }= new List<Car>();
     }
 }

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace StreetOutlaws.Data.Entities
+namespace StreetOutlaws.Models.CarModel
 {
-    public class Car
+    public class CarDetail
     {
         [Required]
         public int Id { get; set; }
@@ -20,6 +20,5 @@ namespace StreetOutlaws.Data.Entities
         [Required]
         [ForeignKey(nameof(DriverId))]
         public int DriverId { get; set; }
-        public virtual Driver Driver { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StreetOutlaws.Data.Context;
-
+using AutoMapper;
+using StreetOutlaws.Services.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(opt=>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddAutoMapper((typeof(MappingConfigurations)));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
