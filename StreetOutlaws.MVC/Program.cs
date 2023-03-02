@@ -1,7 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using StreetOutlaws.Data.Context;
 using AutoMapper;
+using StreetOutlaws.Services.CarServices;
 using StreetOutlaws.Services.Configurations;
+using StreetOutlaws.Services.DriverServices;
+using StreetOutlaws.Services.TeamServices;
+using StreetOutlaws.Services.TrackServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +15,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt=>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddAutoMapper((typeof(MappingConfigurations)));
-
+builder.Services.AddScoped<ICarService,CarService>();
+builder.Services.AddScoped<IDriverService,DriverService>();
+builder.Services.AddScoped<ITeamService,TeamService>();
+builder.Services.AddScoped<ITrackService,TrackService>();
 
 var app = builder.Build();
 

@@ -40,7 +40,7 @@ namespace StreetOutlaws.Services.DriverServices
             }
         }
 
-        public async Task<List<DriverListItem>> GetDrivers()
+        public async Task<List<DriverListItem>> GetAllDrivers()
         {
             var drivers = await _context.Drivers.ToListAsync();
             return _mapper.Map<List<DriverListItem>>(drivers);

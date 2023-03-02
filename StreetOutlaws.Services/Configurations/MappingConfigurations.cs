@@ -19,14 +19,17 @@ namespace StreetOutlaws.Services.Configurations
             CreateMap<Car,CarDetail>().ReverseMap();
             CreateMap<Car,CarListItem>().ReverseMap();
             CreateMap<Car,CarUpdate>().ReverseMap();
+
             CreateMap<Driver,DriverCreate>().ReverseMap();
             CreateMap<Driver,DriverDetail>().ReverseMap();
             CreateMap<Driver,DriverListItem>().ReverseMap();
             CreateMap<Driver,DriverUpdate>().ReverseMap();
+
             CreateMap<Team,TeamCreate>().ReverseMap();
             CreateMap<Team,TeamDetail>().ReverseMap();
             CreateMap<Team,TeamListItem>().ReverseMap();
             CreateMap<Team,TeamUpdate>().ReverseMap();
+            
             CreateMap<Track,TrackCreate>().ReverseMap();
             CreateMap<Track,TrackDetail>().ReverseMap();
             CreateMap<Track,TrackListItem>().ReverseMap();

@@ -40,7 +40,7 @@ namespace StreetOutlaws.Services.TeamServices
             }
         }
 
-        public async Task<List<TeamListItem>> GetTeams()
+        public async Task<List<TeamListItem>> GetAllTeams()
         {
             var teams = await _context.Teams.ToListAsync();
             return _mapper.Map<List<TeamListItem>>(teams);

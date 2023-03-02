@@ -40,7 +40,7 @@ namespace StreetOutlaws.Services.CarServices
             }
         }
 
-        public async Task<List<CarListItem>> GetCars()
+        public async Task<List<CarListItem>> GetAllCars()
         {
             var cars = await _context.Cars.ToListAsync();
             return _mapper.Map<List<CarListItem>>(cars);
