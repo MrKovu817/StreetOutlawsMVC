@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace StreetOutlaws.Data.Migrations
 {
     /// <inheritdoc />
@@ -37,6 +39,26 @@ namespace StreetOutlaws.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Drivers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TeamId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Drivers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Drivers_Teams_TeamId",
+                        column: x => x.TeamId,
+                        principalTable: "Teams",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Cars",
                 columns: table => new
                 {
@@ -50,33 +72,46 @@ namespace StreetOutlaws.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cars", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Cars_Drivers_DriverId",
+                        column: x => x.DriverId,
+                        principalTable: "Drivers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Drivers",
-                columns: table => new
+            migrationBuilder.InsertData(
+                table: "Teams",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TeamId = table.Column<int>(type: "int", nullable: false),
-                    CarId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
+                    { 1, "Fire" },
+                    { 2, "Water" },
+                    { 3, "Wind" },
+                    { 4, "Earth" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Drivers",
+                columns: new[] { "Id", "Name", "TeamId" },
+                values: new object[,]
                 {
-                    table.PrimaryKey("PK_Drivers", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Drivers_Cars_CarId",
-                        column: x => x.CarId,
-                        principalTable: "Cars",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Drivers_Teams_TeamId",
-                        column: x => x.TeamId,
-                        principalTable: "Teams",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    { 1, "DeJuan Colbert", 1 },
+                    { 2, "Zachary Himes", 1 },
+                    { 3, "Jordan Hershberger", 1 },
+                    { 4, "Brody Hinton", 1 },
+                    { 5, "Darneisha Miller", 2 },
+                    { 6, "Cory Smith", 2 },
+                    { 7, "Jamie Coakley", 2 },
+                    { 8, "Michael Kinsey", 2 },
+                    { 9, "Celio Arias", 3 },
+                    { 10, "Cassandra Emery", 3 },
+                    { 11, "Catlin Simon", 3 },
+                    { 12, "Terry Brown", 3 },
+                    { 13, "Nelson Fant IV", 4 },
+                    { 14, "Charles Lipperd", 4 },
+                    { 15, "Adam Lair", 4 },
+                    { 16, "Katelyn Hedlund", 4 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -85,39 +120,22 @@ namespace StreetOutlaws.Data.Migrations
                 column: "DriverId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Drivers_CarId",
-                table: "Drivers",
-                column: "CarId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Drivers_TeamId",
                 table: "Drivers",
                 column: "TeamId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Cars_Drivers_DriverId",
-                table: "Cars",
-                column: "DriverId",
-                principalTable: "Drivers",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Cars_Drivers_DriverId",
-                table: "Cars");
+            migrationBuilder.DropTable(
+                name: "Cars");
 
             migrationBuilder.DropTable(
                 name: "Tracks");
 
             migrationBuilder.DropTable(
                 name: "Drivers");
-
-            migrationBuilder.DropTable(
-                name: "Cars");
 
             migrationBuilder.DropTable(
                 name: "Teams");

@@ -1,0 +1,38 @@
+@model IEnumerable<DriverListItem>
+
+@{
+    ViewData["Title"]="Driver Listing";
+}
+
+@Html.ActionLink("Create Driver","Post","Driver")
+
+@if(Model.Count()>0)
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var driver in Model)
+        {
+            <tr>
+                <td>@driver.Id</td>
+                <td>@driver.Name</td>
+                <td>
+                    @Html.ActionLink("Update","Update","Driver",new {id=driver.Id})
+                    @Html.ActionLink("Details","Details","Driver",new {id=driver.Id})
+                    @Html.ActionLink("Delete","Delete","Driver",new {id=driver.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+else
+{
+    <p class="text-danger">Sorry, NO Drivers Here!</p>
+}

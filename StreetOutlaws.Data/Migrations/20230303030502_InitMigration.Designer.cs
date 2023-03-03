@@ -11,8 +11,8 @@ using StreetOutlaws.Data.Context;
 namespace StreetOutlaws.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230223020632_OneCar_ManyDrivers")]
-    partial class OneCarManyDrivers
+    [Migration("20230303030502_InitMigration")]
+    partial class InitMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,6 +73,104 @@ namespace StreetOutlaws.Data.Migrations
                     b.HasIndex("TeamId");
 
                     b.ToTable("Drivers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "DeJuan Colbert",
+                            TeamId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Zachary Himes",
+                            TeamId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Jordan Hershberger",
+                            TeamId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Brody Hinton",
+                            TeamId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Darneisha Miller",
+                            TeamId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Cory Smith",
+                            TeamId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Jamie Coakley",
+                            TeamId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Michael Kinsey",
+                            TeamId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Celio Arias",
+                            TeamId = 3
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Cassandra Emery",
+                            TeamId = 3
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Catlin Simon",
+                            TeamId = 3
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Terry Brown",
+                            TeamId = 3
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Nelson Fant IV",
+                            TeamId = 4
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Charles Lipperd",
+                            TeamId = 4
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Adam Lair",
+                            TeamId = 4
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Katelyn Hedlund",
+                            TeamId = 4
+                        });
                 });
 
             modelBuilder.Entity("StreetOutlaws.Data.Entities.Team", b =>
@@ -90,6 +188,28 @@ namespace StreetOutlaws.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Teams");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Fire"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Water"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Wind"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Earth"
+                        });
                 });
 
             modelBuilder.Entity("StreetOutlaws.Data.Entities.Track", b =>

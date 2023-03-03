@@ -42,5 +42,58 @@ namespace StreetOutlaws.MVC.Controllers
             else
             return View(car);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Details(int id)
+        {
+            return View(await _carService.GetCarById(id));
+        }
+
+        [HttpGet]
+        [Route("Update/{id}")]
+        public async Task<IActionResult> Update(int id)
+        {
+            var car = await _carService.GetCarById(id);
+            var carUpdate = new CarUpdate
+            {   
+                Id=car.Id,
+                Make=car.Make,
+                Model=car.Model,
+                Year=car.Year
+            };
+            return View(carUpdate);
+        }
+
+        [HttpGet]
+        [Route("Update")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(CarUpdate model)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (await _carService.UpdateCar(model))
+                return RedirectToAction(nameof(Index));
+            else
+                return View(model);
+        }
+
+        [HttpGet]
+        [Route("Delete/{id}")]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            var car = await _carService.GetCarById(id.Value);
+            return View(car);
+        }
+
+        [HttpPost]
+        [Route("Delete/{id}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var IsSuccessful = await _carService.DeleteCar(id);
+            if (IsSuccessful)
+                return RedirectToAction(nameof(Index));
+            else
+                return UnprocessableEntity();
+        }
     }
 }
