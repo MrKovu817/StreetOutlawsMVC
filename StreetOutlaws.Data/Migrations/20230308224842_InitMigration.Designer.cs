@@ -11,7 +11,7 @@ using StreetOutlaws.Data.Context;
 namespace StreetOutlaws.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230303030502_InitMigration")]
+    [Migration("20230308224842_InitMigration")]
     partial class InitMigration
     {
         /// <inheritdoc />
@@ -51,6 +51,136 @@ namespace StreetOutlaws.Data.Migrations
                     b.HasIndex("DriverId");
 
                     b.ToTable("Cars");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DriverId = 1,
+                            Make = "Pontiac",
+                            Model = "GTO",
+                            Year = 1970
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DriverId = 2,
+                            Make = "Chevy",
+                            Model = "Camero",
+                            Year = 1969
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DriverId = 3,
+                            Make = "Chevy",
+                            Model = "Camero",
+                            Year = 1999
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DriverId = 4,
+                            Make = "Chevy",
+                            Model = "Camero",
+                            Year = 2010
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DriverId = 5,
+                            Make = "Chevrolet",
+                            Model = "Chevy II Nova",
+                            Year = 1963
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DriverId = 6,
+                            Make = "Chevrolet",
+                            Model = "Chevy II Nova",
+                            Year = 1965
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DriverId = 7,
+                            Make = "Chevrolet",
+                            Model = "El Camino",
+                            Year = 1969
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DriverId = 8,
+                            Make = "Chevrolet",
+                            Model = "El Camino",
+                            Year = 1981
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DriverId = 9,
+                            Make = "Pontiac",
+                            Model = "LeMans",
+                            Year = 1969
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DriverId = 10,
+                            Make = "Pontiac",
+                            Model = "LeMans",
+                            Year = 1972
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DriverId = 11,
+                            Make = "Chevrolet",
+                            Model = "Vega",
+                            Year = 1977
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DriverId = 12,
+                            Make = "Chevrolet",
+                            Model = "C10",
+                            Year = 1970
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DriverId = 13,
+                            Make = "Chevrolet",
+                            Model = "Monte Carlo",
+                            Year = 1971
+                        },
+                        new
+                        {
+                            Id = 14,
+                            DriverId = 14,
+                            Make = "Dodge",
+                            Model = "Dart",
+                            Year = 1967
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DriverId = 15,
+                            Make = "Ford",
+                            Model = "Mustang",
+                            Year = 1981
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DriverId = 16,
+                            Make = "Ford",
+                            Model = "Mustang",
+                            Year = 2010
+                        });
                 });
 
             modelBuilder.Entity("StreetOutlaws.Data.Entities.Driver", b =>
@@ -227,6 +357,28 @@ namespace StreetOutlaws.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tracks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Indianapolis,Indiana"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Detroit,Michigan"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Chicago,Illinois"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Columbus,Ohio"
+                        });
                 });
 
             modelBuilder.Entity("StreetOutlaws.Data.Entities.Car", b =>

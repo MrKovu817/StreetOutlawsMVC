@@ -92,6 +92,17 @@ namespace StreetOutlaws.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Tracks",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Indianapolis,Indiana" },
+                    { 2, "Detroit,Michigan" },
+                    { 3, "Chicago,Illinois" },
+                    { 4, "Columbus,Ohio" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Drivers",
                 columns: new[] { "Id", "Name", "TeamId" },
                 values: new object[,]
@@ -112,6 +123,29 @@ namespace StreetOutlaws.Data.Migrations
                     { 14, "Charles Lipperd", 4 },
                     { 15, "Adam Lair", 4 },
                     { 16, "Katelyn Hedlund", 4 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cars",
+                columns: new[] { "Id", "DriverId", "Make", "Model", "Year" },
+                values: new object[,]
+                {
+                    { 1, 1, "Pontiac", "GTO", 1970 },
+                    { 2, 2, "Chevy", "Camero", 1969 },
+                    { 3, 3, "Chevy", "Camero", 1999 },
+                    { 4, 4, "Chevy", "Camero", 2010 },
+                    { 5, 5, "Chevrolet", "Chevy II Nova", 1963 },
+                    { 6, 6, "Chevrolet", "Chevy II Nova", 1965 },
+                    { 7, 7, "Chevrolet", "El Camino", 1969 },
+                    { 8, 8, "Chevrolet", "El Camino", 1981 },
+                    { 9, 9, "Pontiac", "LeMans", 1969 },
+                    { 10, 10, "Pontiac", "LeMans", 1972 },
+                    { 11, 11, "Chevrolet", "Vega", 1977 },
+                    { 12, 12, "Chevrolet", "C10", 1970 },
+                    { 13, 13, "Chevrolet", "Monte Carlo", 1971 },
+                    { 14, 14, "Dodge", "Dart", 1967 },
+                    { 15, 15, "Ford", "Mustang", 1981 },
+                    { 16, 16, "Ford", "Mustang", 2010 }
                 });
 
             migrationBuilder.CreateIndex(

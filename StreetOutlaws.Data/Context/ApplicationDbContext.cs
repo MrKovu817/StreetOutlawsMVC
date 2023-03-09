@@ -117,138 +117,138 @@ namespace StreetOutlaws.Data.Context
                     TeamId=4
                 }
             );
-            // modelBuilder.Entity<Car>().HasData(
-            //     new Car{
-            //         Id=1,
-            //         Make="Pontiac",
-            //         Model="GTO",
-            //         Year=1970,
-            //         DriverId=1,
-            //     },
-            //     new Car{
-            //         Id=2,
-            //         Make="Chevy",
-            //         Model="Camero",
-            //         Year= 1969,
-            //         DriverId=2,
-            //     },
-            //     new Car{
-            //         Id=3,
-            //         Make="Chevy",
-            //         Model="Camero",
-            //         Year= 1999,
-            //         DriverId=3,
-            //     },
-            //     new Car{
-            //         Id=4,
-            //         Make="Chevy",
-            //         Model="Camero",
-            //         Year= 2010,
-            //         DriverId=4,
-            //     },
-            //     new Car{
-            //         Id=5,
-            //         Make="Chevrolet",
-            //         Model="Chevy II Nova",
-            //         Year= 1963,
-            //         DriverId=5,
-            //     },
-            //     new Car{
-            //         Id=6,
-            //         Make="Chevrolet",
-            //         Model="Chevy II Nova",
-            //         Year= 1965,
-            //         DriverId=6,
-            //     },
-            //     new Car{
-            //         Id=7,
-            //         Make="Chevrolet",
-            //         Model="El Camino",
-            //         Year= 1969,
-            //         DriverId=7,
-            //     },
-            //     new Car{
-            //         Id=8,
-            //         Make="Chevrolet",
-            //         Model="El Camino",
-            //         Year= 1981,
-            //         DriverId=8,
-            //     },
-            //     new Car{
-            //         Id=9,
-            //         Make="Pontiac",
-            //         Model="LeMans",
-            //         Year=1969,
-            //         DriverId=9,
-            //     },
-            //     new Car{
-            //         Id=10,
-            //         Make="Pontiac",
-            //         Model="LeMans",
-            //         Year=1972,
-            //         DriverId=10,
-            //     },
-            //     new Car{
-            //         Id=11,
-            //         Make="Chevrolet",
-            //         Model="Vega",
-            //         Year= 1977,
-            //         DriverId=11,
-            //     },
-            //     new Car{
-            //         Id=12,
-            //         Make="Chevrolet",
-            //         Model="C10",
-            //         Year= 1970,
-            //         DriverId=12
-            //     },
-            //     new Car{
-            //         Id=13,
-            //         Make="Chevrolet",
-            //         Model="Monte Carlo",
-            //         Year= 1971,
-            //         DriverId=13,
-            //     },
-            //     new Car{
-            //         Id=14,
-            //         Make="Dodge",
-            //         Model="Dart",
-            //         Year= 1967,
-            //         DriverId=14,
-            //     },
-            //     new Car{
-            //         Id=15,
-            //         Make="Ford",
-            //         Model="Mustang",
-            //         Year= 1981,
-            //         DriverId=15,
-            //     },
-            //     new Car{
-            //         Id=16,
-            //         Make="Ford",
-            //         Model="Mustang",
-            //         Year= 2010,
-            //         DriverId=16,
-            //     }
-            // );
-            // modelBuilder.Entity<Track>().HasData(
-            //     new Track{
-            //         Id=1,
-            //         Name="Indianapolis,Indiana"
-            //     },
-            //     new Track{
-            //         Id=2,
-            //         Name="Detroit,Michigan"
-            //     },
-            //     new Track{
-            //         Id=3,
-            //         Name="Chicago,Illinois"
-            //     },
-            //     new Track{
-            //         Id=4,
-            //         Name="Columbus,Ohio"
-            //     }
-            // );
+            modelBuilder.Entity<Car>().HasData(
+                new Car{
+                    Id=1,
+                    Make="Pontiac",
+                    Model="GTO",
+                    Year=1970,
+                    DriverId=1,
+                },
+                new Car{
+                    Id=2,
+                    Make="Chevy",
+                    Model="Camero",
+                    Year= 1969,
+                    DriverId=2,
+                },
+                new Car{
+                    Id=3,
+                    Make="Chevy",
+                    Model="Camero",
+                    Year= 1999,
+                    DriverId=3,
+                },
+                new Car{
+                    Id=4,
+                    Make="Chevy",
+                    Model="Camero",
+                    Year= 2010,
+                    DriverId=4,
+                },
+                new Car{
+                    Id=5,
+                    Make="Chevrolet",
+                    Model="Chevy II Nova",
+                    Year= 1963,
+                    DriverId=5,
+                },
+                new Car{
+                    Id=6,
+                    Make="Chevrolet",
+                    Model="Chevy II Nova",
+                    Year= 1965,
+                    DriverId=6,
+                },
+                new Car{
+                    Id=7,
+                    Make="Chevrolet",
+                    Model="El Camino",
+                    Year= 1969,
+                    DriverId=7,
+                },
+                new Car{
+                    Id=8,
+                    Make="Chevrolet",
+                    Model="El Camino",
+                    Year= 1981,
+                    DriverId=8,
+                },
+                new Car{
+                    Id=9,
+                    Make="Pontiac",
+                    Model="LeMans",
+                    Year=1969,
+                    DriverId=9,
+                },
+                new Car{
+                    Id=10,
+                    Make="Pontiac",
+                    Model="LeMans",
+                    Year=1972,
+                    DriverId=10,
+                },
+                new Car{
+                    Id=11,
+                    Make="Chevrolet",
+                    Model="Vega",
+                    Year= 1977,
+                    DriverId=11,
+                },
+                new Car{
+                    Id=12,
+                    Make="Chevrolet",
+                    Model="C10",
+                    Year= 1970,
+                    DriverId=12
+                },
+                new Car{
+                    Id=13,
+                    Make="Chevrolet",
+                    Model="Monte Carlo",
+                    Year= 1971,
+                    DriverId=13,
+                },
+                new Car{
+                    Id=14,
+                    Make="Dodge",
+                    Model="Dart",
+                    Year= 1967,
+                    DriverId=14,
+                },
+                new Car{
+                    Id=15,
+                    Make="Ford",
+                    Model="Mustang",
+                    Year= 1981,
+                    DriverId=15,
+                },
+                new Car{
+                    Id=16,
+                    Make="Ford",
+                    Model="Mustang",
+                    Year= 2010,
+                    DriverId=16,
+                }
+            );
+            modelBuilder.Entity<Track>().HasData(
+                new Track{
+                    Id=1,
+                    Name="Indianapolis,Indiana"
+                },
+                new Track{
+                    Id=2,
+                    Name="Detroit,Michigan"
+                },
+                new Track{
+                    Id=3,
+                    Name="Chicago,Illinois"
+                },
+                new Track{
+                    Id=4,
+                    Name="Columbus,Ohio"
+                }
+            );
         } 
     }
 }
